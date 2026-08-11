@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --color-ink: #0B1120;
+  --color-surface: #131B2E;
+  --color-cream: #E8E6DF;
+  --color-slate: #94A3B8;
+  --color-amber: #E8A33D;
+  --color-sage: #7FA687;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.cursor-blink { animation: blink 1s step-end infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink { animation: none; }
+}
