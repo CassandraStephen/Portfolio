@@ -17,18 +17,18 @@
 
 <div class="min-h-screen bg-ink text-cream font-sans selection:bg-amber selection:text-ink">
   <header class="border-b border-white/10 bg-surface/60 backdrop-blur">
-    <nav class="max-w-4xl mx-auto flex px-4">
-      {#each tabs as tab}
-        <a
-          href={tab.href}
-          class="flex items-center gap-2 font-mono text-sm px-4 py-3 border-b-2 transition-colors
-            {$page.url.pathname === tab.href ? 'border-amber text-amber' : 'border-transparent text-slate hover:text-cream'}"
-        >
-          <tab.icon size={16} />
-          {tab.label}
-        </a>
-      {/each}
-    </nav>
+    <nav class="max-w-4xl mx-auto flex px-2 sm:px-4">
+  {#each tabs as tab}
+    <a
+      href={tab.href}
+      class="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 font-mono text-xs sm:text-sm px-2.5 sm:px-4 py-3 border-b-2 flex-1 sm:flex-none transition-colors
+        {$page.url.pathname === tab.href ? 'border-amber text-amber' : 'border-transparent text-slate hover:text-cream'}"
+    >
+      <tab.icon size={16} />
+      <span class="hidden sm:inline">{tab.label}</span>
+    </a>
+  {/each}
+</nav>
   </header>
   <main class="max-w-4xl mx-auto px-4 py-12">
     {@render children()}
